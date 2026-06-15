@@ -1,0 +1,18 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "glob": "**/*.cs",
+        "command": "dotnet build --no-restore 2>&1 | findstr /R \"error\" && echo BUILD FAILED || echo BUILD OK"
+      },
+      {
+        "glob": "**/*.cs",
+        "command": "dotnet format --verify-no-changes 2>&1 | findstr \"severity\" && (dotnet format && echo FORMATTED) || echo FORMAT OK"
+      }
+    ],
+    "PreToolUse": {
+      "glob": "{obj/**,bin/**,*.lock.json}",
+      "block": true
+    }
+  }
+}

@@ -1,0 +1,24 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.log
+*.dll
+*.exe
+*.pdb
+*.nupkg
+
+# IDE
+.vs/
+*.DotSettings
+*.sln.docstates
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Project specific
+*.runtimeconfig.json
+*.deps.json

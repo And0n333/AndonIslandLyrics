@@ -1,0 +1,108 @@
+<Window x:Class="DynamicIslandLyrics.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Dynamic Island Lyrics"
+        Width="480"
+        Height="86"
+        MinWidth="360"
+        MinHeight="74"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="CanResizeWithGrip"
+        ShowInTaskbar="False"
+        Topmost="{Binding IsAlwaysOnTop}"
+        Loaded="Window_Loaded"
+        Closing="Window_Closing"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None">
+    <Window.Resources>
+        <!-- 歌词动画 Storyboard -->
+        <Storyboard x:Key="FadeInAnimation" Duration="0:0:0.35">
+            <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                             From="0" To="1"
+                             Duration="0:0:0.35"
+                             DecelerationRatio="0.3" />
+        </Storyboard>
+
+        <Storyboard x:Key="ScaleInAnimation" Duration="0:0:0.35">
+            <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+                             From="0.85" To="1"
+                             Duration="0:0:0.35"
+                             DecelerationRatio="0.3" />
+            <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
+                             From="0.85" To="1"
+                             Duration="0:0:0.35"
+                             DecelerationRatio="0.3" />
+            <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                             From="0" To="1"
+                             Duration="0:0:0.35"
+                             DecelerationRatio="0.3" />
+        </Storyboard>
+
+        <DropShadowEffect x:Key="IslandShadow"
+                          BlurRadius="26"
+                          Direction="270"
+                          Opacity="0.42"
+                          ShadowDepth="10"
+                          Color="#000000" />
+
+        <LinearGradientBrush x:Key="IslandBackground" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#F20A0A0D" Offset="0" />
+            <GradientStop Color="#F213151B" Offset="0.58" />
+            <GradientStop Color="#F208090C" Offset="1" />
+        </LinearGradientBrush>
+
+    </Window.Resources>
+
+    <Border x:Name="IslandBorder"
+            Margin="12"
+            Background="{StaticResource IslandBackground}"
+            CornerRadius="42"
+            Effect="{StaticResource IslandShadow}"
+            MouseLeftButtonDown="Island_MouseLeftButtonDown">
+        <Grid Margin="14,10,12,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="64" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Border Width="56"
+                    Height="56"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Background="#FF20222B"
+                    CornerRadius="18">
+                <Grid>
+                    <Grid.Clip>
+                        <RectangleGeometry RadiusX="18" RadiusY="18"
+                                           Rect="0,0,56,56" />
+                    </Grid.Clip>
+                    <Image Source="{Binding AlbumCover}"
+                           Stretch="UniformToFill" />
+                    <Border Background="#22000000" />
+                </Grid>
+            </Border>
+
+            <Grid Grid.Column="1"
+                  Margin="10,0,8,0"
+                  VerticalAlignment="Center">
+                <TextBlock x:Name="LyricTextBlock"
+                           Text="{Binding CurrentLyric}"
+                           Foreground="#FFFFFFFF"
+                           FontFamily="Microsoft YaHei UI"
+                           FontSize="22"
+                           FontWeight="SemiBold"
+                           TextTrimming="CharacterEllipsis"
+                           TextWrapping="NoWrap">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                            <TranslateTransform X="0" Y="0" />
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+            </Grid>
+
+        </Grid>
+    </Border>
+</Window>
