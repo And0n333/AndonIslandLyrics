@@ -1,4 +1,4 @@
-namespace DynamicIslandLyrics.Models;
+namespace AndonIslandLyrics.Models;
 
 /// <summary>
 /// 歌词文档接口 — 来自 HotLyric 的设计模式。

@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows;
 
-namespace DynamicIslandLyrics;
+namespace AndonIslandLyrics;
 
 /// <summary>
 /// Interaction logic for App.xaml

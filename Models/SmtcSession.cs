@@ -6,7 +6,7 @@ using System.Windows.Media.Imaging;
 using Windows.Media.Control;
 using Windows.Storage.Streams;
 
-namespace DynamicIslandLyrics.Models;
+namespace AndonIslandLyrics.Models;
 
 /// <summary>
 /// SMTC 会话封装 — 源自 HotLyric 的 SMTCSession。

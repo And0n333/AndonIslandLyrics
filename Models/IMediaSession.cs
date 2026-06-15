@@ -1,6 +1,6 @@
 using System.Windows.Media;
 
-namespace DynamicIslandLyrics.Models;
+namespace AndonIslandLyrics.Models;
 
 /// <summary>
 /// SMTC 媒体会话接口 — 源自 HotLyric 的 IMediaSession。

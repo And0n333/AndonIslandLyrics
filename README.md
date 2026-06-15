@@ -1,4 +1,4 @@
-# DynamicIslandLyrics 🎵
+# AndonIslandLyrics 🎵
 
 一个使用 **C# / WPF** 编写的桌面歌词悬浮窗，外观参考苹果灵动岛（Dynamic Island）。
 
@@ -60,7 +60,7 @@ AMLL TTML 歌词站 → QQ 音乐 → 网易云音乐 → LRCLIB → 本地 LRC 
 
 ### 直接运行（推荐）
 
-从 [Releases](../../releases) 下载 `DynamicIslandLyrics.zip`，解压后双击 `DynamicIslandLyrics.exe` 即可。
+从 [Releases](../../releases) 下载 `AndonIslandLyrics.zip`，解压后双击 `AndonIslandLyrics.exe` 即可。
 
 > 不需要安装 .NET SDK。单文件自包含，~78 MB。
 

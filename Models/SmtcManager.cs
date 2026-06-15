@@ -2,7 +2,7 @@ using System.Diagnostics;
 using System.Windows;
 using Windows.Media.Control;
 
-namespace DynamicIslandLyrics.Models;
+namespace AndonIslandLyrics.Models;
 
 /// <summary>
 /// SMTC 会话管理器 — 源自 HotLyric 的 SMTCManager。

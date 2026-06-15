@@ -1,4 +1,4 @@
-namespace DynamicIslandLyrics.Models;
+namespace AndonIslandLyrics.Models;
 
 /// <summary>
 /// 歌词数据模型 — 源自 HotLyric 的 Lyric record。

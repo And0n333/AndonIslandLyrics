@@ -25,11 +25,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 using Windows.Media.Control;
 using Windows.Storage.Streams;
-using DynamicIslandLyrics.Models;
+using AndonIslandLyrics.Models;
 
-[assembly: InternalsVisibleTo("DynamicIslandLyrics")]
+[assembly: InternalsVisibleTo("AndonIslandLyrics")]
 
-namespace DynamicIslandLyrics;
+namespace AndonIslandLyrics;
 
 public partial class MainWindow : Window
 {
@@ -1047,7 +1047,7 @@ public sealed class OnlineLyricProvider : IDisposable
     public OnlineLyricProvider()
     {
         _lrclibHttpClient.DefaultRequestHeaders.UserAgent.Add(
-            new ProductInfoHeaderValue("DynamicIslandLyrics", "1.0"));
+            new ProductInfoHeaderValue("AndonIslandLyrics", "1.0"));
     }
 
     public async Task<IReadOnlyList<TimedLyricLine>> FindSyncedLyricsAsync(

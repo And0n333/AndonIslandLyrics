@@ -1,6 +1,6 @@
 using System.Windows;
 
-namespace DynamicIslandLyrics.Models;
+namespace AndonIslandLyrics.Models;
 
 /// <summary>
 /// 媒体会话模型 — 源自 HotLyric 的 MediaModel。

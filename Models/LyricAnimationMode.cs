@@ -1,4 +1,4 @@
-namespace DynamicIslandLyrics.Models;
+namespace AndonIslandLyrics.Models;
 
 /// <summary>
 /// 歌词动画模式枚举
